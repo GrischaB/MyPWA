@@ -2,17 +2,20 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Meine PWA</title>
   <link rel="manifest" href="manifest.json" />
   <style>
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 40px;
-      background: #f0f0f0;
-      color: #333;
-    }
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 40px;
+    background-color: white;
+    color: #333;
+    margin: 0;
+    padding-top: env(safe-area-inset-top);
+  }
     .blink {
       width: 100px;
       height: 100px;
