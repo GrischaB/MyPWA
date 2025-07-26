@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Startseite</title>
 
-  <!-- PWA & Statusbar -->
   <meta name="theme-color" content="#ffffff" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -18,12 +17,13 @@
     const initials = "MH";
     window.onload = () => {
       document.getElementById("initials").textContent = initials;
+      document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
     };
   </script>
 </head>
 <body>
-  <div class="bg"></div>
-  <div class="ui">
+  <div class="background"></div>
+  <div class="overlay">
     <div id="circle-button" onclick="window.location.href='profil.html'">
       <span id="initials">--</span>
     </div>
