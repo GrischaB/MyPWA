@@ -8,18 +8,11 @@
   <link rel="stylesheet" href="ticket.css" />
   <script>
     window.onload = () => {
-      // Initialen setzen
       document.getElementById("initials").textContent = "DP";
-
-      // Datum & Uhrzeit setzen
       const now = new Date();
-      const day = String(now.getDate()).padStart(2, '0');
-      const month = String(now.getMonth() + 1).padStart(2, '0');
-      const year = String(now.getFullYear()).slice(2);
-      const hours = String(now.getHours()).padStart(2, '0');
-      const minutes = String(now.getMinutes()).padStart(2, '0');
-      document.getElementById("datum").textContent = `${day}.${month}.${year}`;
-      document.getElementById("zeit").textContent = `${hours}:${minutes}`;
+      const d = (n) => String(n).padStart(2, "0");
+      document.getElementById("datum").textContent = `${d(now.getDate())}.${d(now.getMonth() + 1)}.${String(now.getFullYear()).slice(2)}`;
+      document.getElementById("zeit").textContent = `${d(now.getHours())}:${d(now.getMinutes())}`;
     };
   </script>
 </head>

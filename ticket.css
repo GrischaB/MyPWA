@@ -6,19 +6,21 @@ html, body {
   color: #000;
 }
 
-/* Header */
 .header {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: calc(env(safe-area-inset-top, 20px) + 10px) 16px 10px;
   border-bottom: 1px solid #ddd;
+  position: relative;
 }
 
 .back-button {
+  position: absolute;
+  left: 16px;
   font-size: 28px;
   background: none;
   border: none;
-  margin-right: 12px;
   color: #333;
   cursor: pointer;
 }
@@ -28,15 +30,14 @@ html, body {
   font-weight: 500;
 }
 
-/* Hauptbereich */
+/* Layout */
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 32px 16px;
+  padding: 32px 0;
 }
 
-/* Initialen-Kreis */
 .initials-circle {
   width: 150px;
   height: 150px;
@@ -50,19 +51,18 @@ main {
   font-weight: 600;
   color: #333;
   margin-bottom: -75px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   z-index: 2;
 }
 
-/* Karte */
+/* Ticket-Karte */
 .card {
   margin-top: 0;
-  background: linear-gradient(to left, #4e7975, #89a49d);
+  background: linear-gradient(30deg, #2e585a, #8da8a1);
   color: white;
   padding: 24px 20px;
   border-radius: 20px;
-  width: 100%;
-  max-width: 360px;
+  width: 92%;
+  max-width: 480px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
   position: relative;
   overflow: hidden;
@@ -75,14 +75,14 @@ main {
   bottom: -20px;
   left: 50%;
   transform: translateX(-50%);
-  width: 50px;
-  height: 20px;
+  width: 48px;
+  height: 24px;
   background: white;
-  border-radius: 0 0 25px 25px;
+  border-radius: 0 0 24px 24px;
   z-index: 1;
 }
 
-/* Zeilen */
+/* Inhalt */
 .row {
   display: flex;
   justify-content: space-between;
@@ -101,10 +101,9 @@ main {
   font-weight: bold;
 }
 
-/* Blinkendes CHECKED-IN Badge */
 .badge {
-  background: #fff;
-  color: #1a8a3f;
+  background: #82e147;
+  color: #000;
   font-weight: bold;
   font-size: 13px;
   padding: 4px 10px;
@@ -112,7 +111,7 @@ main {
 }
 
 .blink {
-  animation: blink 2s step-start infinite;
+  animation: blink 2.8s step-start infinite;
 }
 
 @keyframes blink {
@@ -120,7 +119,6 @@ main {
   25%, 75% { opacity: 0; }
 }
 
-/* Linie & Ort */
 hr {
   border: none;
   border-top: 1px dashed rgba(255,255,255,0.5);
