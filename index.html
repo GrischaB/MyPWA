@@ -2,19 +2,19 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Startseite</title>
 
-  <!-- PWA + iOS-Statusleiste -->
+  <!-- PWA & Statusbar -->
   <meta name="theme-color" content="#ffffff" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 
   <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="WellP.png" />
   <link rel="stylesheet" href="style.css" />
 
   <script>
-    // Initialen setzen
     const initials = "MH";
     window.onload = () => {
       document.getElementById("initials").textContent = initials;
@@ -22,16 +22,11 @@
   </script>
 </head>
 <body>
-  <div class="background"></div>
-
-  <!-- Inhalt mit safe-area-Padding -->
-  <div class="content">
-    <!-- Initialen-Kreis oben rechts -->
+  <div class="bg"></div>
+  <div class="ui">
     <div id="circle-button" onclick="window.location.href='profil.html'">
       <span id="initials">--</span>
     </div>
-
-    <!-- QR-Code Fläche unten -->
     <div id="qr-button" onclick="window.location.href='ticket.html'"></div>
   </div>
 </body>
