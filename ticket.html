@@ -2,50 +2,62 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Check-in Ticket</title>
+  <meta name="theme-color" content="#ffffff" />
   <link rel="stylesheet" href="ticket.css" />
+  <script>
+    window.onload = () => {
+      // Initialen
+      document.getElementById("initials").textContent = "GB"; // <== anpassbar
+
+      // Datum im Format TT.MM.JJ
+      const now = new Date();
+      const day = String(now.getDate()).padStart(2, '0');
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const year = String(now.getFullYear()).slice(2);
+      document.getElementById("datum").textContent = `${day}.${month}.${year}`;
+
+      // Uhrzeit im Format HH:MM
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      document.getElementById("uhrzeit").textContent = `${hours}:${minutes}`;
+    };
+  </script>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <button onclick="history.back()">←</button>
-      <h1>Check-in Ticket</h1>
-      <div class="spacer"></div>
-    </header>
+  <header>Check-in Ticket</header>
+
+  <main>
+    <div class="profile-initials">
+      <div id="initials">--</div>
+    </div>
 
     <div class="card">
-      <div class="profile-pic">
-        <img src="profilbild.jpg" alt="Profilbild" />
+      <div class="row">
+        <div class="label">Mitglied</div>
+        <div class="value">Grischa Bräuer</div>
       </div>
-      <div class="info-row">
-        <div>
-          <label>Mitglied</label>
-          <div class="bold">Grischa Bräuer</div>
-        </div>
-        <div>
-          <label>Status</label>
-          <div class="status">CHECKED-IN</div>
-        </div>
+      <div class="row">
+        <div class="label">Status</div>
+        <div class="badge">CHECKED-IN</div>
       </div>
-
-      <div class="info-row">
-        <div>
-          <label>Datum</label>
-          <div>25.07.25</div>
-        </div>
-        <div>
-          <label>Zeit</label>
-          <div>20:31</div>
-        </div>
+      <div class="row">
+        <div class="label">Datum</div>
+        <div class="value" id="datum">--.--.--</div>
       </div>
-
+      <div class="row">
+        <div class="label">Zeit</div>
+        <div class="value" id="uhrzeit">--:--</div>
+      </div>
+      <hr />
+      <div class="label">Netzwerkpartner</div>
       <div class="location">
-        <label>Netzwerkpartner</label>
-        <div class="bold">feelMOOR Therme/Fitnessclub Bad Wurzach</div>
-        <div>Karl-Wilhelm-Heck-Straße 8, 88410, Bad Wurzach</div>
+        <strong>feelMOOR Therme/Fitnessclub Bad W...</strong><br>
+        Karl-Wilhelm-Heck-Straße 8, 88410,<br>
+        Bad Wurzach
       </div>
     </div>
-  </div>
+  </main>
 </body>
 </html>
