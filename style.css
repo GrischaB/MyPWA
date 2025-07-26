@@ -1,38 +1,40 @@
-/* Body ohne bottom-Overflow, Bild unter Statusleiste */
+/* Kein Scrollen, kein Inhalt beschneiden */
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: system-ui, sans-serif;
-  background-color: black;
-  color: white;
+  background: black;
   overscroll-behavior: none;
 }
 
-body {
-  padding-left: env(safe-area-inset-left);
-  padding-right: env(safe-area-inset-right);
-  /* 👇 Wichtig: Bild bleibt oben unter Statusleiste, aber unten nicht abgeschnitten */
-  padding-bottom: env(safe-area-inset-bottom);
-}
-
-/* Hintergrundbild geht bis ganz oben */
+/* Hintergrundbild: ganzflächig, unabhängig vom safe-area */
 .background {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('start.jpg');
+  background: url('start.jpg') no-repeat center center;
   background-size: cover;
-  background-position: center;
   z-index: 0;
 }
 
-/* Initialen-Kreis */
+/* Inhalt liegt über dem Hintergrund und nutzt safe-area */
+.content {
+  position: relative;
+  height: 100%;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  z-index: 1;
+}
+
+/* Initialen-Kreis oben rechts */
 #circle-button {
   position: absolute;
-  top: calc(env(safe-area-inset-top, 0px) + 20px);
+  top: 20px;
   right: 20px;
   width: 60px;
   height: 60px;
@@ -44,19 +46,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10;
   cursor: pointer;
   backdrop-filter: blur(5px);
 }
 
-/* QR-Code Button unten */
+/* QR-Code Fläche unten mittig */
 #qr-button {
   position: absolute;
-  bottom: calc(env(safe-area-inset-bottom, 0px) + 30px);
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
   width: 90px;
   height: 90px;
-  z-index: 10;
   cursor: pointer;
 }

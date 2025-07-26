@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Startseite</title>
 
-  <!-- PWA + iOS Vollbild + weiße Statusleiste -->
+  <!-- PWA + iOS-Statusleiste -->
   <meta name="theme-color" content="#ffffff" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -18,14 +18,14 @@
     const initials = "MH";
     window.onload = () => {
       document.getElementById("initials").textContent = initials;
-
-      // Workaround für iOS: volle Fensterhöhe nutzen
-      document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
     };
   </script>
 </head>
 <body>
-  <div class="background">
+  <div class="background"></div>
+
+  <!-- Inhalt mit safe-area-Padding -->
+  <div class="content">
     <!-- Initialen-Kreis oben rechts -->
     <div id="circle-button" onclick="window.location.href='profil.html'">
       <span id="initials">--</span>
