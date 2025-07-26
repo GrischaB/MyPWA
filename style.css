@@ -2,7 +2,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100dvh; /* <<< echtes Vollbild auf iOS Safari */
+  height: 100%; /* <<< echtes Vollbild auf iOS Safari */
   font-family: system-ui, sans-serif;
   background-color: black;
   color: white;
@@ -16,11 +16,11 @@ body {
 }
 
 .background {
-  position: fixed;
+  position: absolute;
   inset: 0;
-  background-image: url('start.jpg');
+  height: 100%;
+  background: url('start.jpg') no-repeat center center;
   background-size: cover;
-  background-position: center;
   z-index: 0;
 }
 
