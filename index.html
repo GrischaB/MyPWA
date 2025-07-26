@@ -2,14 +2,26 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <!-- Damit das Bild wirklich den gesamten Screen abdeckt -->
+  <!-- echtes Vollbild inkl. Notch & Home‑Bar -->
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Startseite</title>
+
+  <!-- PWA & weiße Statusleiste -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="WellP.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Deine Buttons bleiben hier im Body -->
-  <div id="circle-button" onclick="location.href='profil.html'">MH</div>
+  <!-- Profil-Button oben rechts -->
+  <div id="circle-button" onclick="location.href='profil.html'">
+    <span id="initials">MH</span>
+  </div>
+
+  <!-- QR-Code Button unten mittig -->
   <div id="qr-button" onclick="location.href='ticket.html'"></div>
 </body>
 </html>
