@@ -9,6 +9,7 @@
   <script>
     window.onload = () => {
       document.getElementById("initials").textContent = "DP";
+
       const now = new Date();
       const d = (n) => String(n).padStart(2, "0");
       document.getElementById("datum").textContent = `${d(now.getDate())}.${d(now.getMonth() + 1)}.${String(now.getFullYear()).slice(2)}`;
@@ -28,26 +29,36 @@
     </div>
 
     <div class="card">
-      <div class="row">
+      <!-- Erste Zeile: Mitglied + Status -->
+      <div class="row row-top">
         <div class="label">Mitglied</div>
-        <div class="value">Grischa Bräuer</div>
+        <div class="label right">Status</div>
       </div>
-      <div class="row">
-        <div class="label">Status</div>
+
+      <!-- Zweite Zeile: Name + CHECKED-IN -->
+      <div class="row row-second">
+        <div class="value name">Grischa Bräuer</div>
         <div class="badge blink">CHECKED-IN</div>
       </div>
-      <div class="row">
+
+      <!-- Dritte Zeile: Datum + Zeit Labels -->
+      <div class="row row-third">
         <div class="label">Datum</div>
-        <div class="value" id="datum">--.--.--</div>
+        <div class="label right">Zeit</div>
       </div>
-      <div class="row">
-        <div class="label">Zeit</div>
+
+      <!-- Vierte Zeile: Datum + Zeit Werte -->
+      <div class="row row-fourth">
+        <div class="value" id="datum">--.--.--</div>
         <div class="value" id="zeit">--:--</div>
       </div>
+
       <hr />
+
+      <!-- Netzwerkpartner -->
       <div class="label">Netzwerkpartner</div>
       <div class="location">
-        <strong>feelMOOR Therme/Fitnessclub Bad W...</strong><br />
+        <strong>feelMOOR Therme/Fitnessclub Bad Wurzach</strong><br />
         Karl-Wilhelm-Heck-Straße 8, 88410,<br />
         Bad Wurzach
       </div>
