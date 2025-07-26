@@ -1,23 +1,28 @@
-/* 1) Bild als Body-Hintergrund – beginnt bei ganz oben */
-html, body {
+/* 1) html für Vollbild-Hintergrund */
+html {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
-}
-
-body {
   background: url('start.jpg') no-repeat center top;
   background-size: cover;
-  position: relative;
-  font-family: system-ui, sans-serif;
-  /* kein overflow:hidden, damit nichts abgeschnitten wird */
+  position: fixed;
+  inset: 0;
+  z-index: 0;
 }
 
-/* 2) Profil-Button (oben rechts) */
+/* 2) body als UI-Container, ohne overflow:hidden */
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  height: 100%;
+  font-family: system-ui, sans-serif;
+}
+
+/* 3) Profil-Button oben rechts */
 #circle-button {
   position: absolute;
-  /* steigt um 16px unterhalb der Notch an */
   top: calc(env(safe-area-inset-top, 0px) + 16px);
   right: 16px;
   width: 60px;
@@ -34,10 +39,9 @@ body {
   z-index: 1;
 }
 
-/* 3) QR-Code Button (unten mittig) */
+/* 4) QR-Code Button unten mittig */
 #qr-button {
   position: absolute;
-  /* sitzt 24px über der Home-Bar */
   bottom: calc(env(safe-area-inset-bottom, 0px) + 24px);
   left: 50%;
   transform: translateX(-50%);
