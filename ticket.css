@@ -12,18 +12,15 @@ html, body {
   align-items: center;
   padding: calc(env(safe-area-inset-top, 20px) + 10px) 16px 10px;
   border-bottom: 1px solid #ddd;
-  position: relative;
 }
 
 .back-button {
   font-size: 28px;
   background: none;
   border: none;
-  padding: 0;
   margin-right: 12px;
   color: #333;
   cursor: pointer;
-  line-height: 1;
 }
 
 .title {
@@ -31,7 +28,7 @@ html, body {
   font-weight: 500;
 }
 
-/* Body */
+/* Hauptbereich */
 main {
   display: flex;
   flex-direction: column;
@@ -41,55 +38,56 @@ main {
 
 /* Initialen-Kreis */
 .initials-circle {
-  width: 120px;
-  height: 120px;
-  background: #e0e0e0;
+  width: 150px;
+  height: 150px;
+  background: #d0d0d0;
   border-radius: 50%;
+  border: 5px solid white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
+  font-size: 40px;
   font-weight: 600;
-  color: #444;
+  color: #333;
+  margin-bottom: -75px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   z-index: 2;
-  margin-bottom: -60px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 /* Karte */
 .card {
   margin-top: 0;
-  background: linear-gradient(to left, #30d158, #1e9a73);
+  background: linear-gradient(to left, #4e7975, #89a49d);
   color: white;
-  padding: 20px;
+  padding: 24px 20px;
   border-radius: 20px;
   width: 100%;
-  max-width: 380px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  max-width: 360px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
   position: relative;
   overflow: hidden;
 }
 
-/* Einbuchtung unten */
+/* Halbrunde Aussparung unten */
 .card::after {
   content: '';
   position: absolute;
   bottom: -20px;
   left: 50%;
   transform: translateX(-50%);
-  width: 40px;
+  width: 50px;
   height: 20px;
   background: white;
-  border-radius: 0 0 20px 20px;
-  z-index: 2;
+  border-radius: 0 0 25px 25px;
+  z-index: 1;
 }
 
-/* Inhalt */
+/* Zeilen */
 .row {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 12px;
   align-items: center;
+  margin-bottom: 14px;
 }
 
 .label {
@@ -99,10 +97,11 @@ main {
 }
 
 .value {
-  font-weight: bold;
   font-size: 14px;
+  font-weight: bold;
 }
 
+/* Blinkendes CHECKED-IN Badge */
 .badge {
   background: #fff;
   color: #1a8a3f;
@@ -112,10 +111,20 @@ main {
   border-radius: 6px;
 }
 
+.blink {
+  animation: blink 2s step-start infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+/* Linie & Ort */
 hr {
   border: none;
   border-top: 1px dashed rgba(255,255,255,0.5);
-  margin: 16px 0;
+  margin: 18px 0;
 }
 
 .location {
