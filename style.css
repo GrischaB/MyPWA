@@ -1,26 +1,23 @@
-/* Vollbild-Setup mit Notch-Kompatibilität */
+/* Modernes Vollbild mit echter Gerätehöhe */
 html, body {
   margin: 0;
   padding: 0;
-  height: 100vh;
+  height: 100dvh; /* <<< echtes Vollbild auf iOS Safari */
   font-family: system-ui, sans-serif;
   background-color: black;
   color: white;
+  overscroll-behavior: none;
 }
 
 body {
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
-  /* Achtung: KEIN padding-bottom hier – das kürzt effektiv die Höhe */
-  overflow: hidden;
+  /* Kein overflow: hidden mehr – damit Inhalt nicht abgeschnitten wird */
 }
 
 .background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: fixed;
+  inset: 0;
   background-image: url('start.jpg');
   background-size: cover;
   background-position: center;
@@ -30,7 +27,7 @@ body {
 /* Initialen-Kreis oben rechts */
 #circle-button {
   position: absolute;
-  top: calc(env(safe-area-inset-top, 0px) + 16px);
+  top: calc(env(safe-area-inset-top, 0px) + 20px);
   right: 20px;
   width: 60px;
   height: 60px;
@@ -50,7 +47,7 @@ body {
 /* QR-Code Fläche unten mittig */
 #qr-button {
   position: absolute;
-  bottom: calc(env(safe-area-inset-bottom, 0px) + 40px);
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 30px);
   left: 50%;
   transform: translateX(-50%);
   width: 90px;
