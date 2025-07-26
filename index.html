@@ -3,11 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Test PWA</title>
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <link rel="manifest" href="manifest.json" />
+  <title>Startseite</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    // Initialen setzen
+    const initials = "MH";
+    window.onload = () => {
+      document.getElementById("initials").textContent = initials;
+    };
+  </script>
 </head>
 <body>
-  <h1>Hallo PWA auf iPhone!</h1>
+  <div class="background">
+    <div id="circle-button" onclick="window.location.href='profil.html'">
+      <span id="initials">--</span>
+    </div>
+    <div id="qr-button" onclick="window.location.href='ticket.html'"></div>
+  </div>
 </body>
 </html>

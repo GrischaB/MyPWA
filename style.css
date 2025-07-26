@@ -1,0 +1,50 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: system-ui, sans-serif;
+}
+
+.background {
+  background: url('start.jpg') no-repeat center center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+/* Profilbutton (oben rechts) */
+#circle-button {
+  position: absolute;
+  top: 40px; /* Je nach iOS-Statusleiste ggf. anpassen */
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0); /* Unsichtbar */
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* Initialen (austauschbar) */
+#initials {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  color: transparent; /* Unsichtbar – nur unsichtbare Fläche */
+}
+
+/* QR-Code Button (unten mittig) */
+#qr-button {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 64px;
+  z-index: 10;
+  cursor: pointer;
+}
