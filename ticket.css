@@ -61,7 +61,7 @@ main {
   color: white;
   padding: 24px 20px;
   border-radius: 20px;
-  width: 92vw; /* 92% der Bildschirmbreite */
+  width: 88vw; /* 92% der Bildschirmbreite */
   max-width: none; /* entfernt Begrenzung */
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
   position: relative;
