@@ -2,9 +2,11 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
+  <!-- Vollbild unter Notch & Home‑Bar -->
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Startseite</title>
 
+  <!-- PWA & weiße Statusleiste -->
   <meta name="theme-color" content="#ffffff" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -12,22 +14,13 @@
   <link rel="manifest" href="manifest.json" />
   <link rel="apple-touch-icon" href="WellP.png" />
   <link rel="stylesheet" href="style.css" />
-
-  <script>
-    const initials = "MH";
-    window.onload = () => {
-      document.getElementById("initials").textContent = initials;
-      document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
-    };
-  </script>
 </head>
 <body>
-  <div class="background"></div>
-  <div class="overlay">
-    <div id="circle-button" onclick="window.location.href='profil.html'">
-      <span id="initials">--</span>
-    </div>
-    <div id="qr-button" onclick="window.location.href='ticket.html'"></div>
+  <!-- Profil-Button oben rechts -->
+  <div id="circle-button" onclick="location.href='profil.html'">
+    <span id="initials">MH</span>
   </div>
+  <!-- QR-Code Button unten mittig -->
+  <div id="qr-button" onclick="location.href='ticket.html'"></div>
 </body>
 </html>
